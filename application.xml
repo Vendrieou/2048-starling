@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" ?> 
 <application xmlns="http://ns.adobe.com/air/application/28.0">
 	
-	<id>air.Dinosaur</id>
+	<id>air.2048-starling</id>
 	<versionNumber>0.1</versionNumber>
 	<supportedProfiles>mobileDevice</supportedProfiles>
-	<filename>Dinosaur</filename>
+	<filename>2048-starling</filename>
 	
-	<name>Dinosaur</name>
+	<name>2048-starling</name>
 	<description></description>
 	<copyright></copyright>
 	
@@ -46,8 +46,8 @@
     </iPhone> 
 	
 	<initialWindow>
-		<title>Dinosaur</title>
-		<content>Dinosaur.swf</content>
+		<title>2048-starling</title>
+		<content>2048-starling.swf</content>
 		<visible>true</visible>
 		<fullScreen>true</fullScreen>
 		<!--<autoOrients>false</autoOrients>-->

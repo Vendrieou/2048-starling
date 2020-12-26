@@ -11,7 +11,7 @@ package
 	
 	/**
 	 * ...
-	 * @author Wilson
+	 * @author Vendrie
 	 */
 	[SWF(width="1024", height="600", frameRate="60", backgroundColor="#a5a5a5")]
 	public class Main extends Sprite 

@@ -9,9 +9,9 @@ cd %~dp0 & cd ..
 :: NOTICE: all paths are relative to project root
 
 :: Android packaging
-set AND_CERT_NAME="Dinosaur"
+set AND_CERT_NAME="2048-starling"
 set AND_CERT_PASS=fd
-set AND_CERT_FILE=cert\Dinosaur.p12
+set AND_CERT_FILE=cert\2048-starling.p12
 set AND_ICONS=icons/android
 
 set AND_SIGNING_OPTIONS=-storetype pkcs12 -keystore "%AND_CERT_FILE%" -storepass %AND_CERT_PASS%
@@ -20,7 +20,7 @@ set AND_SIGNING_OPTIONS=-storetype pkcs12 -keystore "%AND_CERT_FILE%" -storepass
 set IOS_DIST_CERT_FILE=
 set IOS_DEV_CERT_FILE=
 set IOS_DEV_CERT_PASS=
-set IOS_PROVISION=cert\Dinosaur.mobileprovision
+set IOS_PROVISION=cert\2048-starling.mobileprovision
 set IOS_ICONS=icons/ios
 
 set IOS_DEV_SIGNING_OPTIONS=-storetype pkcs12 -keystore "%IOS_DEV_CERT_FILE%" -storepass %IOS_DEV_CERT_PASS% -provisioning-profile %IOS_PROVISION%
@@ -39,7 +39,7 @@ set APP_ID=%APP_ID: =%
 
 :: Output packages
 set DIST_PATH=dist
-set DIST_NAME=Dinosaur
+set DIST_NAME=2048-starling
 
 :: Debugging using a custom IP
 set DEBUG_IP=
