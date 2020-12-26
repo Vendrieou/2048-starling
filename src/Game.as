@@ -128,5 +128,26 @@ package
 				blockPlayer.scaleY = 1;
 			}
 		}
+		
+		private function moveLeft(e:KeyboardEvent):void 
+		{
+			if (e.keyCode == Keyboard.DOWN)
+			{
+				blockPlayer.scaleY = 1;
+			}
+		}
+		
+		private function moveRight(e:KeyboardEvent):void 
+		{
+		}
+		
+		private function moveUp(e:KeyboardEvent):void 
+		{
+		}
+		
+		private function moveDown(e:KeyboardEvent):void 
+		{
+		}
+		
 	}
 }
