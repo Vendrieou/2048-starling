@@ -137,17 +137,17 @@ package
 			}
 		}
 		
-		private function moveRight(e:KeyboardEvent):void 
-		{
-		}
-		
-		private function moveUp(e:KeyboardEvent):void 
-		{
-		}
-		
-		private function moveDown(e:KeyboardEvent):void 
-		{
-		}
+		//private function moveRight(e:KeyboardEvent):void 
+		//{
+		//}
+		//
+		//private function moveUp(e:KeyboardEvent):void 
+		//{
+		//}
+		//
+		//private function moveDown(e:KeyboardEvent):void 
+		//{
+		//}
 		
 	}
 }

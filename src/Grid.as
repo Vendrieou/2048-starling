@@ -34,7 +34,7 @@ package
 			return true;
 		}
 		
-		public function flipGrid(grid:Array)
+		public function copyGrid(grid:Array)
 		{
 			extraGrid: Array = blankGrid();
 			for (var i:int = 0; i < 4; i++)
@@ -80,26 +80,21 @@ package
 				{
 					if (grid[i][j] == 0)
 					{
-						options.push(Point(i, j));
+						options.push(Position(i, j));
 					}
 				}
 			}
 			
 			if (options.length > 0)
 			{
-				var spotRandomIndex:int = new Random().nextInt(options.length);
-				var spot:Point = options[spotRandomIndex];
-				var r:int = new Random().nextInt(100);
+				var spotRandomIndex:int = Math.floor(Math.Random() * options.length);
+				var spot:Position = options[spotRandomIndex];
+				var r:int = Math.floor(Math.Random() * 100);
 				grid[spot.x][spot.y] = r > 50 ? 4 : 2;
 				gridNew[spot.x][spot.y] = 1;
 			}
 			
 			return grid;
-		}
-		
-		public function Grid()
-		{
-		
 		}
 	
 	}
