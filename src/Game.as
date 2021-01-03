@@ -71,6 +71,7 @@ package
 				grid_cells.push(grid_row);
 			}
 			
+		
 			this.stage.addEventListener(KeyboardEvent.KEY_DOWN, pressKeyboard);
 			//this.stage.addEventListener(KeyboardEvent.KEY_UP, upKeyboard);
 			//this.addEventListener(EnterFrameEvent.ENTER_FRAME, enterFrame);
@@ -97,10 +98,10 @@ package
 			
 			private function pressKeyboard(e:KeyboardEvent):void
 			{
-				if (e.keyCode == Keyboard.B && history_matrixs.length > 1) {
-					matrix = history_matrixs.pop();
-					update_grid_cells();
-				}
+				//if (e.keyCode == Keyboard.B && history_matrixs.length > 1) {
+					//matrix = history_matrixs.pop();
+					//update_grid_cells();
+				//}
 				// else if (e.keyCode in Keyboard) {
 					matrix = logic.add_two(matrix);
 					history_matrixs.push(matrix);
