@@ -12,7 +12,7 @@ package
 	
 	/**
 	 * ...
-	 * @author your_name
+	 * @author vendrie
 	 */
 	public class Game extends Sprite
 	{
@@ -23,15 +23,6 @@ package
 		private var matrix = new Logic().new_game(4);
 		
 		public var logic : Logic = new Logic();
-		
-		//
-		//private var blockPlayer:Image;
-		//private var circleList:Vector.<Image> = new Vector.<Image>();
-		//private var circleSpeed:int = 10;
-		//private var circleVertical:int = 0;
-		//
-		//private var jump:Boolean = false;
-		//private var speedUp:int;
 		
 		public function Game()
 		{
@@ -46,23 +37,7 @@ package
 		
 		private function startGame():void
 		{
-			////create player
-			//blockPlayer = new Image(assetsManager.getTexture("block"));
-			//blockPlayer.pivotY = blockPlayer.height;
-			//blockPlayer.x = 100;
-			//blockPlayer.y = 600;
-			//addChild(blockPlayer);
-			//
-			//// circle
-			//for (var i:int = 0; i < 1; i++)
-			//{
-				//var circleItem:Image = new Image(assetsManager.getTexture("circle"));
-				//circleItem.visible = false;
-				//circleItem.x = 1024;
-				//circleItem.y = 0;
-				//addChild(circleItem);
-				//circleList.push(circleItem);
-			//}
+			// create background		
 			var gridBackground:Quad = new Quad(500, 500, 0xFFa2917d);
 			addChild(gridBackground);			
 			
@@ -87,7 +62,6 @@ package
 				grid_cells.push(grid_row);
 			}
 		}
-			
 			
 			this.stage.addEventListener(KeyboardEvent.KEY_DOWN, pressKeyboard);
 			//this.stage.addEventListener(KeyboardEvent.KEY_UP, upKeyboard);
@@ -140,7 +114,6 @@ package
 				}
 			}
 		}
-		
 
 		
 		//private function enterFrame(e:EnterFrameEvent):void
@@ -195,144 +168,7 @@ package
 		//
 		//}
 		//
-		//private function pressKeyboard(e:KeyboardEvent):void
-		//{
-			//if (jump == true) return;
-			//if (e.keyCode == Keyboard.UP)
-			//{
-				//jump = true;
-				//speedUp = 20;
-			//}
-			//else if (e.keyCode == Keyboard.DOWN)
-			//{
-				//blockPlayer.scaleY = 0.5;
-			//}
-		//}
-		//
-		//private function upKeyboard(e:KeyboardEvent):void
-		//{
-			//if (e.keyCode == Keyboard.DOWN)
-			//{
-				//blockPlayer.scaleY = 1;
-			//}
-		//}
-		//
-		//private function moveLeft(e:KeyboardEvent):void
-		//{
-			//if (e.keyCode == Keyboard.DOWN)
-			//{
-				//blockPlayer.scaleY = 1;
-			//}
-		//}
-		
-		//private function moveRight(e:KeyboardEvent):void 
-		//{
-		//}
-		//
-		//private function moveUp(e:KeyboardEvent):void 
-		//{
-		//}
-		//
-		//private function moveDown(e:KeyboardEvent):void 
-		//{
-		//}
-		
-		//===== logic ======
-		
-		//public function operate(row:Array, score:int, sharedPref):Array
-		//{
-			//row = slide(row);
-			//var result:Array = combine(row, score, sharedPref);
-			//var sc:int = result[0];
-			//row = result[1];
-			//row = slide(row);
-			//
-			//// warn!('from func ${sc}');
-			//return [sc, row];
-		//}
-		//
-		//public function filtered(row:Array):Array
-		//{
-			//var temp:Array = [];
-			//for (var i:int = 0; i < row.length; i++)
-			//{
-				//if (row[i] != 0)
-				//{
-					//temp.add(row[i]);
-				//}
-			//}
-			//return temp;
-		//}
-		//
-		//public function slide(row:Array):Array
-		//{
-			//var arr:Array = filter(row);
-			//var missing:int = 4 - arr.length;
-			//var zeroes:Array = zeroArray(missing);
-			//arr = zeroes + arr;
-			//
-			//return arr;
-		//}
-		//
-		//public function zeroArray(length:int):Array
-		//{
-			//var zeroes:Array = [];
-			//for (var i:int = 0; i < length; i++)
-			//{
-				//zeroes.add(0);
-			//}
-			//return zeroes;
-		//}
-		//
-		//public function combine(row:Array, score:int, sharedPref):Array
-		//{
-			//for (var i:int = 3; i >= 1; i--)
-			//{
-				//var a:int = row[i];
-				//var b:int = row[i - 1];
-				//if (a == b)
-				//{
-					//row[i] = a + b;
-					//score += row[i];
-					//var sc:int = sharedPref.getInt('high_score');
-					//
-					//if (sc == null)
-					//{
-						//sharedPref.setInt('high_score', score);
-					//}
-					//else
-					//{
-						//if (score > sc)
-						//{
-							//sharedPref.setInt('high_score', score);
-						//}
-					//}
-					//row[i - 1] = 0;
-					//
-				//}
-			//}
-			//return [score, row];
-		//}
-		//
-		//public function isGameWon(grid:Array):Boolean
-		//{
-			//for (var i:int = 0; i < 4; i++)
-			//{
-				//for (var j:int = 0; j < 4; j++)
-				//{
-					//if (grid[i][j] == 2048)
-					//{
-						//return true;
-					//}
-				//}
-			//}
-			//return false;
-		//}
-		//
-		//public function isGameOver(grid:Array)
-		//{
-		
-		
+	
 			//for (var i:int = 0; i < 4; i++)
 			//{
 				//for (var j:int = 0; j < 4; j++)
@@ -354,5 +190,4 @@ package
 			//return true;
 		//}
 	}
-
 }
