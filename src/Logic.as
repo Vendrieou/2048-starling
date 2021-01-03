@@ -10,9 +10,14 @@ package
 		public function new_game(n: int):Array 
 		{
 			var matrix : Array = [];
-			var newArr : Array = [];
+			// var newArr : Array = [];
 			for (var i:int = 0; i < n; i++) {
-				matrix.push(newArr);
+				matrix[i] = []
+				for (var j:int = 0; j < n; j++) 
+				{
+					matrix[i][j] = []
+				}
+				// matrix.push(newArr);
 			}
 			matrix = add_two(matrix);
 			matrix = add_two(matrix);
