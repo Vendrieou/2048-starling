@@ -20,56 +20,65 @@ package
 		
 		private var grid_cells : Array = [];
 		private var history_matrixs : Array = [];
-		private var matrix = new Logic().new_game(4);
+		public var matrix : Array = new Logic().new_game(4);
 		
 		public var logic : Logic = new Logic();
 		
-		public function Game()
-		{
-			//var appDir:File = File.applicationDirectory;
-			//SET ASSETS MANAGER
-			
-			assetsManager = new AssetManager();
-			//assetsManager.enqueue(appDir.resolvePath("image"));
-			//
-			assetsManager.loadQueue(startGame);
+		public var commands : Object = {
+			KEY_UP: logic.up, KEY_DOWN: logic.down,
+			KEY_LEFT: logic.left, KEY_RIGHT: logic.right,
+			KEY_UP_ALT: logic.up, KEY_DOWN_ALT: logic.down,
+			KEY_LEFT_ALT: logic.left, KEY_RIGHT_ALT: logic.right,
+			KEY_H: logic.left, KEY_L: logic.right,
+			KEY_K: logic.up, KEY_J: logic.down
 		}
-		
-		private function startGame():void
-		{
-			// create background		
-			var gridBackground:Quad = new Quad(500, 500, 0xFFa2917d);
-			addChild(gridBackground);			
-			
-			for (var i:int = 0; i < 4; i++) {
-				var grid_row : Array = [];
+
+			public function Game()
+			{
+				//var appDir:File = File.applicationDirectory;
+				//SET ASSETS MANAGER
 				
-				for (var j:int = 0; j < 4; j++) {
-					var grid:Quad = new Quad(100, 100, 0xffffff);
-					grid.x = 10 + (i * 120);
-					grid.y = 10 + (j * 120);
-					addChild(grid);
-					
-					var text:TextField = new TextField(0,0);
-					text.width = 120 + (i * 240);
-					text.height= 120 + (j * 240);
-					text.text = "0";
-					text.padding = 260;
-					addChild(label);
-					
-					grid_row.push(text);
-				}
-				grid_cells.push(grid_row);
+				assetsManager = new AssetManager();
+				//assetsManager.enqueue(appDir.resolvePath("image"));
+				//
+				assetsManager.loadQueue(startGame);
 			}
-		}
+		
+			private function startGame():void
+			{
+				// create background		
+				var gridBackground:Quad = new Quad(500, 500, 0xFFa2917d);
+				addChild(gridBackground);			
+				
+				for (var i:int = 0; i < 4; i++) {
+					var grid_row : Array = [];
+					
+					for (var j:int = 0; j < 4; j++) {
+						var grid:Quad = new Quad(100, 100, 0xffffff);
+						grid.x = 10 + (i * 120);
+						grid.y = 10 + (j * 120);
+						addChild(grid);
+						
+						var text:TextField = new TextField(0,0);
+						text.width = 120 + (i * 240);
+						text.height= 120 + (j * 240);
+						text.text = "0";
+						text.padding = 260;
+						addChild(text);
+						
+						grid_row.push(text);
+					}
+					grid_cells.push(grid_row);
+				}
+			}
 			
 			this.stage.addEventListener(KeyboardEvent.KEY_DOWN, pressKeyboard);
 			//this.stage.addEventListener(KeyboardEvent.KEY_UP, upKeyboard);
-			this.addEventListener(EnterFrameEvent.ENTER_FRAME, enterFrame);
+			//this.addEventListener(EnterFrameEvent.ENTER_FRAME, enterFrame);
 		}
 
 		// update grid cells function
-		public function update_grid_cells():void 
+		function update_grid_cells():void 
 		{
 			for (var i:int = 0; i < 4; i++) {
 				for (var j:int = 0; j < 4; j++) {
@@ -86,12 +95,12 @@ package
 			}
 		}
 		
-		public function pressKeyboard(e:KeyboardEvent):void
+		function pressKeyboard(e:KeyboardEvent):void
 		{
 			if (e.keyCode == Keyboard.B && history_matrixs.length > 1) {
 				matrix = history_matrixs.pop();
 				update_grid_cells();
-			} else if (e.keyCode) {
+			} else if (e.keyCode in commands) {
 				if (done) {
 					// is Win
 					if (logic.game_state(matrix) == "win") {
@@ -115,7 +124,6 @@ package
 			}
 		}
 
-		
 		//private function enterFrame(e:EnterFrameEvent):void
 		//{
 			//
@@ -190,4 +198,3 @@ package
 			//return true;
 		//}
 	}
-}
